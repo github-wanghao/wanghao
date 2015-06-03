@@ -410,7 +410,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                                   <div class="form-group">
                                                       <label class="col-lg-2 control-label">性别</label>
                                                       <div class="col-lg-6">
-                                                          <input type="text" value="" name="user.userSex" class="form-control" id="occupation" placeholder=" ">
+                                                          <input type="text" value="" name="Sex" class="form-control" id="occupation" placeholder=" ">
                                                       </div>
                                                   </div>
                                                   <div class="form-group">

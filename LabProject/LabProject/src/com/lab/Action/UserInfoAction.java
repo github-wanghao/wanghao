@@ -17,7 +17,20 @@ public class UserInfoAction extends ActionSupport implements SessionAware{
 	private UserService userService;
 	private Users user;
 	Map<String, Object> session;
+	private String Sex;
 	
+	
+
+	public String getSex() {
+		return Sex;
+	}
+
+
+	public void setSex(String sex) {
+		Sex = sex;
+	}
+
+
 	public UserService getUserService() {
 		return userService;
 	}
@@ -47,9 +60,19 @@ public class UserInfoAction extends ActionSupport implements SessionAware{
 			return "login"; 
 	}	
 	public String Update() throws Exception{
+		if(this.Sex.equals("ÄÐ")){
+			user.setUserSex(0);
+			userService.updateUser(session.get("UserID").toString(), user);
+			return "success";
+		}else if(this.Sex.equals("Å®")){
+			user.setUserSex(1);
+			userService.updateUser(session.get("UserID").toString(), user);
+			return "success";
+		}else{
+			return "login";
+		}
 		
-		userService.updateUser(session.get("UserID").toString(), user);
-		return "success";
+		
 	}
 
 
